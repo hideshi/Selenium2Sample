@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Selenium2 Sample</title>
+  <meta name="viewport" content="width=1024, maximum-scale=1, user-scalable=yes">
+  <meta name="keywords" content="Selenium2,Test"/>
+  <meta name="description" content="This page is for automated testing using Selenium2."/>
+  <script src="./js/jquery.js"></script>
+
+</head>
+<body>
+  <form id="form" type="file" method="POST" action="confirm.php">
+    <table>
+    <tr>
+      <td>
+        <label for="text">Text Box</label>
+      </td>
+      <td>
+        <input type="text" id="text" name="text" value="" tabindex="1" required/><br/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="password">Password</label>
+      </td>
+      <td>
+        <input type="password" id="password" name="password" value="" tabindex="2"/><br/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="textarea">Text Area</label>
+      </td>
+      <td>
+        <textarea id="textarea" name="textarea" value="" tabindex="3" required></textarea><br/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="hidden">Hidden Field</label>
+      </td>
+      <td>
+        <input type="hidden" id="hidden" name="hidden" value=""/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+    <label for="radio">Radio Button</label>
+      </td>
+      <td>
+        <input type="radio" id="radio1" name="radio" value="1" tabindex="4" checked/>
+        <input type="radio" id="radio2" name="radio" value="2" tabindex="4"/>
+        <input type="radio" id="radio3" name="radio" value="3" tabindex="4"/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="checkbox1">Check Box 1</label>
+      </td>
+      <td>
+        <input type="checkbox" id="checkbox1" name="checkbox1" value="1" tabindex="5" checked/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="checkbox2">Check Box 2</label>
+      </td>
+      <td>
+        <input type="checkbox" id="checkbox2" name="checkbox2" value="1" tabindex="6"/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="select">Select</label>
+      </td>
+      <td>
+        <select id="select" tabindex="7">
+          <option value="0"></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <input type="hidden" id="hidden_select" name="hidden_select" value=""/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="date">Date</label>
+      </td>
+      <td>
+        <input type="date" id="date" name="date" value="" tabindex="8"/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="file">File Upload</label>
+      </td>
+      <td>
+        <input type="file" id="file" name="file" value="" tabindex="9"/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="button">Button</label>
+      </td>
+      <td>
+        <button id="button" name="button" tabindex="10">BUTTON</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="submit">Submit</label>
+      </td>
+      <td>
+        <input type="submit" id="submit" name="submit" value="SUBMIT" tabindex="11"/>
+      </td>
+    </tr>
+
+    </table>
+  </form>
+  <script src="./js/jquery.validate.js"></script>
+  <script>
+    jQuery(function($) {
+      $('#form').validate();
+
+      $('#select').on('click', function(event) {
+        $('#hidden_select').val($(this).val());
+      });
+
+      $('#button').on('click', function(event) {
+        event.preventDefault();
+        alert("Clicked button!");
+      });
+    });
+  </script>
+</body>
+</html>
