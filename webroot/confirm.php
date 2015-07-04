@@ -22,7 +22,7 @@
     $date = $_POST['date'];
     $file = $_POST['file'];
 ?>
-  <form id="form" type="file" method="GET">
+  <form id="form" type="file" method="POST">
     <table>
     <tr>
       <td>
